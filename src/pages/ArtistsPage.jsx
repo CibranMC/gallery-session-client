@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Card, Col, Container, Row } from 'react-bootstrap'
 import ArtistAPI from '../services/artists.service'
 
 const ArtistsList = () => {
@@ -13,14 +14,25 @@ const ArtistsList = () => {
     // const [pagination, setPagination] = useState(0)
     // const [maxPage, setMaxPage] = useState(0)
     return (
-        <div>
-            {
-                artists.map((artist) => {
-                    return (
-                        <h1>{artist.name}</h1>
-                    )
-                })
-            }
+        <div className='Artists-list'>
+            <Container>
+                <Row xs={3} className='g-4'>
+                    {
+                        artists.map((artist) => {
+                            return (
+                                <Col key={artist._id}>
+                                    <Card style={{ width: '18rem' }}>
+                                        <Card.Body>
+                                            <Card.Title>{artist.name} {artist.lastName}</Card.Title>
+                                            <Card.Text>{artist.description}</Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            )
+                        })
+                    }
+                </Row>
+            </Container>
         </div>
     )
 }

@@ -13,7 +13,7 @@ function NavbarComponent() {
                     <Nav className="me-auto">
                         <Nav.Link className="link-navbar" href='/'>Home</Nav.Link>
                         <Nav.Link className="link-navbar" href="/artists">Artists</Nav.Link>
-                        <Nav.Link className="link-navbar" href="#">Artworks</Nav.Link>
+                        <Nav.Link className="link-navbar" href="/artworks">Artworks</Nav.Link>
                         <Nav.Link className="link-navbar" href="#home">Exhibitions</Nav.Link>
                         <Nav.Link className="link-navbar" href="#features">Shop</Nav.Link>
                         <Nav.Link className="link-navbar" href="#pricing">About Us</Nav.Link>

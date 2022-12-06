@@ -5,11 +5,14 @@ class ArtistAPI extends InitAxios {
         super('artists')
     }
 
-    getAllArtists(page) {
+    getAllArtists() {
         return this.axios
             .get(`/?limit=15&offset=0`)
-            .get(`/?limit=15&offset=0`)
             .then((response) => response.data)
+    }
+
+    getOneArtistById(id) {
+        return this.axios.get(`/${id}`).then((response) => response.data)
     }
 
 }
