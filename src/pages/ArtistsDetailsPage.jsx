@@ -4,7 +4,6 @@ import ArtistAPI from '../services/artists.service'
 import ArtistCard from '../components/ArtistCard/ArtistCard'
 
 
-
 const ArtistDetail = () => {
     const { id } = useParams()
     const [artist, setArtist] = useState(undefined);

@@ -12,8 +12,9 @@ function NavbarComponent() {
                         <Nav.Link><Link className="link-navbar" to='/'>Home</Link></Nav.Link>
                         <Nav.Link ><Link className="link-navbar" to='/artists'>Artists</Link></Nav.Link>
                         <Nav.Link ><Link className="link-navbar" to="/artworks">Artworks</Link></Nav.Link>
-                        <NavDropdown title="Cathalogue" id="basic-nav-dropdown" alignright="true">
+                        <NavDropdown className="nav-drop" title="Cathalogue" id="basic-nav-dropdown" alignright="true">
                             <NavDropdown.Item><Link to="/create-artist">Create Artist</Link></NavDropdown.Item>
+                            <NavDropdown.Item><Link to="/create-artwork">Create Artwork</Link></NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link ><Link className="link-navbar" to="#home">Exhibitions</Link></Nav.Link>
                         <Nav.Link ><Link className="link-navbar" to="/create-artist">Shop</Link></Nav.Link>

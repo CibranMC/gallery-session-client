@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap'
+import { Card, Col, Container, Row, Button } from 'react-bootstrap'
 import ArtWorksAPI from '../services/artworks.service'
+import { Link } from 'react-router-dom'
 
 const ArtworksList = () => {
     const [artworks, setArtworks] = useState([])
@@ -28,6 +29,9 @@ const ArtworksList = () => {
                                             <Card.Text>{artwork.year}</Card.Text>
                                             <Card.Text>{artwork.technique}</Card.Text>
                                         </Card.Body>
+                                        <Card.Footer>
+                                            <Button><Link to={`/artworks/${artwork._id}`}>Details</Link></Button>
+                                        </Card.Footer>
                                     </Card>
                                 </Col>
                             )
