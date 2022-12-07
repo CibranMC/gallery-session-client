@@ -7,7 +7,7 @@ const ArtworksList = () => {
 
     useEffect(() => {
         ArtWorksAPI.getAllArtworks().then((artworks) => {
-
+            console.log(artworks)
             setArtworks(artworks.results)
         })
     }, [])
@@ -17,7 +17,7 @@ const ArtworksList = () => {
             <Container>
                 <Row xs={3} className='g-4'>
                     {
-                        artworks.map((artwork) => {
+                        artworks?.map((artwork) => {
                             return (
                                 <Col key={artwork._id}>
                                     <Card style={{ width: '18rem' }}>

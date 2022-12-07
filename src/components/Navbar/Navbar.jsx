@@ -1,7 +1,5 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-// import { Link } from 'react-router-dom';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 function NavbarComponent() {
@@ -11,13 +9,16 @@ function NavbarComponent() {
                 <Container>
                     <Navbar.Brand href="#home">Taca</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link className="link-navbar" href='/'>Home</Nav.Link>
-                        <Nav.Link className="link-navbar" href="/artists">Artists</Nav.Link>
-                        <Nav.Link className="link-navbar" href="/artworks">Artworks</Nav.Link>
-                        <Nav.Link className="link-navbar" href="#home">Exhibitions</Nav.Link>
-                        <Nav.Link className="link-navbar" href="#features">Shop</Nav.Link>
-                        <Nav.Link className="link-navbar" href="#pricing">About Us</Nav.Link>
-                        <Nav.Link className="link-navbar" href="#">Contact Us</Nav.Link>
+                        <Nav.Link><Link className="link-navbar" to='/'>Home</Link></Nav.Link>
+                        <Nav.Link ><Link className="link-navbar" to='/artists'>Artists</Link></Nav.Link>
+                        <Nav.Link ><Link className="link-navbar" to="/artworks">Artworks</Link></Nav.Link>
+                        <NavDropdown title="Cathalogue" id="basic-nav-dropdown" alignright="true">
+                            <NavDropdown.Item><Link to="/create-artist">Create Artist</Link></NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link ><Link className="link-navbar" to="#home">Exhibitions</Link></Nav.Link>
+                        <Nav.Link ><Link className="link-navbar" to="/create-artist">Shop</Link></Nav.Link>
+                        <Nav.Link ><Link className="link-navbar" to="#pricing">About Us</Link></Nav.Link>
+                        <Nav.Link ><Link className="link-navbar" to="#">Contact Us</Link></Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

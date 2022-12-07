@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap'
+import { Card, Col, Container, Row, Button } from 'react-bootstrap'
 import ArtistAPI from '../services/artists.service'
+import { Link } from 'react-router-dom'
 
 const ArtistsList = () => {
     const [artists, setArtists] = useState([])
 
     useEffect(() => {
         ArtistAPI.getAllArtists().then((artists) => {
-
+            console.log(artists)
             setArtists(artists.results)
         })
     }, [])
@@ -26,6 +27,7 @@ const ArtistsList = () => {
                                             <Card.Title>{artist.name} {artist.lastName}</Card.Title>
                                             <Card.Text>{artist.description}</Card.Text>
                                         </Card.Body>
+                                        <Card.Footer><Button><Link to={`/artists/${artist._id}`}>Details</Link></Button></Card.Footer>
                                     </Card>
                                 </Col>
                             )

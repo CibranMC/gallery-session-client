@@ -3,9 +3,9 @@ import { Button, Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 const ArtistCard = ({ artist }) => {
-    const { show, setShow } = useState(false)
+    // const { show, setShow } = useState(false)
 
-    const handleShow = () => setShow(true)
+    // const handleShow = () => setShow(true)
 
     return (
         <>
@@ -16,11 +16,6 @@ const ArtistCard = ({ artist }) => {
                     <Card.Text>{artist.description}</Card.Text>
                     <Card.Text>{artist.email}</Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                    <Button variant='link'>
-                        <Link to={`/artists/${artist._id}`}>Details</Link>
-                    </Button>
-                </Card.Footer>
             </Card>
         </>
     )
