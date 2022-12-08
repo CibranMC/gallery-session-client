@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import ArtistAPI from '../services/artists.service'
+import ArtistAPI from '../../services/artists.service'
 import { Col, Container, Row, Button, Form } from 'react-bootstrap'
 
 const ArtistCreate = () => {
@@ -58,6 +58,7 @@ const ArtistCreate = () => {
                                 onChange={updateNewArtist}
                                 type="text"
                                 name="name"
+                                placeholder='First Name'
 
                             />
                             <Form.Control.Feedback tooltip>Looks good!</Form.Control.Feedback>
@@ -73,6 +74,7 @@ const ArtistCreate = () => {
                                 onChange={updateNewArtist}
                                 type="text"
                                 name="lastName"
+                                placeholder='Last Name'
                             />
 
                             <Form.Control.Feedback tooltip>Looks good!</Form.Control.Feedback>

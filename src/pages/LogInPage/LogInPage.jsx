@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import AuthAPI from '../services/auth.service';
-import { AuthContext } from '../context/auth.context';
+import AuthAPI from '../../services/auth.service';
+import { AuthContext } from '../../context/auth.context';
 
 const LoginPage = () => {
     const [user, setUser] = useState({});

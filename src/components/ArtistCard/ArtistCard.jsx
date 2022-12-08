@@ -8,6 +8,11 @@ const ArtistCard = ({ artist }) => {
         <>
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
+                    <Card.Img
+                        src={artist.imageUrl}
+                        alt={artist.name} />
+
+
                     <Card.Title>{artist.name} {artist.lastName}</Card.Title>
                     <Card.Text>{artist.userName}</Card.Text>
                     <Card.Text>{artist.description}</Card.Text>

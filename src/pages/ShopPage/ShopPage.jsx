@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Card, Col, Container, Row, Button } from 'react-bootstrap'
-import ArtWorksAPI from '../services/artworks.service'
+import ArtWorksAPI from '../../services/artworks.service'
 import { Link } from 'react-router-dom'
 
-const ArtworksList = () => {
+const ShopList = () => {
     const [artworks, setArtworks] = useState([])
 
     useEffect(() => {
@@ -43,4 +43,4 @@ const ArtworksList = () => {
     )
 }
 
-export default ArtworksList
+export default ShopList

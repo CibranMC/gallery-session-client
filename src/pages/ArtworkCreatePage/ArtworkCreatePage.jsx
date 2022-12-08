@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import ArtworkAPI from '../services/artworks.service'
+import ArtworkAPI from '../../services/artworks.service'
 import { Col, Container, Row, Button, Form } from 'react-bootstrap'
 
 const ArtworkCreate = () => {

@@ -14,7 +14,30 @@
     text-decoration: none;
 }
 
+.link-navbar:hover {
+    color: #212529 !important;
+}
+
 .nav-drop {
     background: transparent;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-collapse {
+    background-color: black !important;
+}
+
+.link-dropdown {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    background: #212529 !important
+}
+
+.btn {
+    color: blueviolet !important;
     text-decoration: none;
 }

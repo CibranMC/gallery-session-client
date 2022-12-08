@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import AuthAPI from '../services/auth.service';
+import AuthAPI from '../../services/auth.service';
 
 const Register = () => {
     const [newUser, setNewUser] = useState({})

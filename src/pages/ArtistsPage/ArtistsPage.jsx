@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Card, Col, Container, Row, Button } from 'react-bootstrap'
-import ArtistAPI from '../services/artists.service'
+import ArtistAPI from '../../services/artists.service'
 import { Link } from 'react-router-dom'
 
 const ArtistsList = () => {

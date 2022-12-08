@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import ArtWorksAPI from '../services/artworks.service'
-import ArtworkCard from '../components/ArtworkCard/ArtworkCard'
+import ArtWorksAPI from '../../services/artworks.service'
+import ArtworkCard from '../../components/ArtworkCard/ArtworkCard'
 
 
 const ArtworkDetail = () => {

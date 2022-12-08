@@ -32,7 +32,7 @@ export const AuthProvider = (props) => {
                 });
         } else {
             setUser(null);
-            navigate('/');
+            // navigate('/auth/register');
         }
     };
 
