@@ -1,27 +1,20 @@
-import { Button, Card } from "react-bootstrap"
-
+import './ArtworkCard.css'
+import { Container } from "react-bootstrap"
 
 const ArtworkCard = ({ artwork }) => {
 
     return (
         <>
-            <Card className="my-2"
-                color="dark"
-                style={{ width: '18rem' }}>
-                <Card.Body >
-                    <Card.Img
-                        src={artwork.imageArtworkUrl}
-                        alt={artwork.name} />
-                    <Card.Title>{artwork.name}</Card.Title>
-                    <Card.Text>{artwork.artistName}</Card.Text>
-                    <Card.Text>
-                        {artwork.description}
-                    </Card.Text>
-                    <Card.Text>{artwork.year}</Card.Text>
-                    <Card.Text>{artwork.technique}</Card.Text>
-                    <Card.Text>{artwork.price}</Card.Text>
-                </Card.Body>
-            </Card>
+            <Container>
+                <img className="artworks-img" src={artwork.imageArtworkUrl} alt={artwork.name} />
+                <h2>{artwork.name}</h2>
+                <h5>{artwork.artistName}</h5>
+                <p>{artwork.description}</p>
+                <p>{artwork.year}</p>
+                <p>{artwork.technique}</p>
+                <p>{artwork.price}</p>
+
+            </Container>
         </>
     )
 }

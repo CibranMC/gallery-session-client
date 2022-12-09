@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Hoefler Text;
+  src: url('./utils/fonts/hoefler-text.ttf');
+}
+
 body {
   background-color: #000 !important;
   overflow-x: hidden;

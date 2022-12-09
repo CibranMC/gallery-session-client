@@ -23,8 +23,8 @@ const ArtworksList = () => {
                             return (
                                 <Col xs={3} lg={3} key={artwork._id}>
 
-                                    <img className="artworks-img" src={artwork.imageArtworkUrl} alt={artwork.name} />
-                                    <p>{artwork.name}</p>
+                                    <Link to={`/artworks/${artwork._id}`}><img className="artworks-img" src={artwork.imageArtworkUrl} alt={artwork.name} />
+                                        <p>{artwork.name}</p></Link>
 
                                 </Col>
                             )

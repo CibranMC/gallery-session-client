@@ -5,14 +5,15 @@ import { Col, Container, Row, Button, Form } from 'react-bootstrap'
 
 const ArtistCreate = () => {
     const navigate = useNavigate();
-    const [artist, setArtist] = useState({});
-    const [imageUrl, setImageUrl] = useState();
 
+    const [artist, setArtist] = useState({});
+    // const [imageUrl, setImageUrl] = useState();
 
 
     const createNewArtist = (event) => {
+        const { imageUrl, value } = event.target
         event.preventDefault()
-        ArtistAPI.createArtist(artist, imageUrl)
+        ArtistAPI.createArtist({ ...artist, [imageUrl]: value })
             .then(() => {
 
                 navigate('/artists');
@@ -25,17 +26,17 @@ const ArtistCreate = () => {
     }
 
     const handleFileUpload = (event) => {
-
+        setArtist({ artist })
 
         const uploadData = new FormData();
 
         uploadData.append("imageUrl", event.target.files[0]);
-
+        console.log(uploadData.get("imageUrl"))
         ArtistAPI
-            .createArtist(uploadData)
+            .uploadImage(uploadData)
             .then(response => {
                 console.log("response is: ", response)
-                setImageUrl(response.fileUrl);
+                setArtist(response.fileUrl);
             })
             .catch(err => console.log("Error while uploading the file: ", err));
     };

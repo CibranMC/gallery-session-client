@@ -1,3 +1,4 @@
+import './ArtistsPage.css'
 import { useEffect, useState } from 'react'
 import { Card, Col, Container, Row, Button } from 'react-bootstrap'
 import ArtistAPI from '../../services/artists.service'
@@ -22,13 +23,8 @@ const ArtistsList = () => {
                         artists.map((artist) => {
                             return (
                                 <Col key={artist._id}>
-                                    <Card style={{ width: '18rem' }}>
-                                        <Card.Body>
-                                            <Card.Title>{artist.name} {artist.lastName}</Card.Title>
-                                            <Card.Text>{artist.description}</Card.Text>
-                                        </Card.Body>
-                                        <Card.Footer><Button><Link to={`/artists/${artist._id}`}>Details</Link></Button></Card.Footer>
-                                    </Card>
+                                    <Link to={`/artists/${artist._id}`}><img className="artists-img" src={artist.imageUrl} alt={artist.userName} /></Link>
+                                    <p>{artist.name} {artist.lastName}</p>
                                 </Col>
                             )
                         })

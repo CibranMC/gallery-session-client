@@ -15,6 +15,10 @@ class ArtistAPI extends InitAxios {
         return this.axios.post('/', body).then((response) => response.data)
     }
 
+    uploadImage(file) {
+        return this.axios.post('/upload', file).then((response) => response.data)
+    }
+
     getOneArtistById(id) {
         return this.axios.get(`/${id}`).then((response) => response.data)
     }
