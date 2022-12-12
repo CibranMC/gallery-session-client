@@ -1,8 +1,14 @@
+import { AuthContext } from '../../context/auth.context';
+
 import { Container, Nav, Navbar, NavDropdown, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { useContext } from 'react';
 
 function NavbarComponent() {
+    const { logOut, isLoggedIn } = useContext(AuthContext)
+
+
     return (
         <>
             <Navbar className="NavBar" collapseOnSelect expand="sm" bg="black" variant="dark">
@@ -22,6 +28,38 @@ function NavbarComponent() {
                             <Nav.Link ><Link className="link-navbar" to="#home">Exhibitions</Link></Nav.Link>
                             <Nav.Link ><Link className="link-navbar" to="/shop">Shop</Link></Nav.Link>
                             <Nav.Link ><Link className="link-navbar" to="/footer">Contact Us</Link></Nav.Link>
+
+                            {isLoggedIn ? (
+                                <>
+                                    <Nav.Link as='span'>
+                                        <Link className='link-navbar' to='/'>
+                                            User
+                                        </Link>
+                                    </Nav.Link>
+                                    <Nav.Link as='span'>
+                                        <p className='link-navbar' onClick={logOut}>
+                                            Log out
+                                        </p>
+                                    </Nav.Link>
+                                </>
+                            ) : (
+                                <>
+                                    <Nav.Link as='span'>
+                                        <Link className='link-navbar' to='auth/register'>
+                                            Register
+                                        </Link>
+                                    </Nav.Link>
+                                    <Nav.Link as='span'>
+                                        <Link className='link-navbar' to='/auth/login'>
+                                            Login
+                                        </Link>
+                                    </Nav.Link>
+
+
+                                </>
+                            )
+                            }
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

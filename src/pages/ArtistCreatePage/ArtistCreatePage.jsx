@@ -1,19 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import ArtistAPI from '../../services/artists.service'
 import { Col, Container, Row, Button, Form } from 'react-bootstrap'
 
 const ArtistCreate = () => {
     const navigate = useNavigate();
-
     const [artist, setArtist] = useState({});
-    // const [imageUrl, setImageUrl] = useState();
 
+
+    useEffect(() => {
+        console.log("Test Use Effect", artist)
+    }, [artist])
 
     const createNewArtist = (event) => {
-        const { imageUrl, value } = event.target
         event.preventDefault()
-        ArtistAPI.createArtist({ ...artist, [imageUrl]: value })
+        ArtistAPI.createArtist(artist)
             .then(() => {
 
                 navigate('/artists');
@@ -26,7 +27,8 @@ const ArtistCreate = () => {
     }
 
     const handleFileUpload = (event) => {
-        setArtist({ artist })
+        const { name, value } = event.target
+        setArtist({ ...artist, [name]: value })
 
         const uploadData = new FormData();
 
@@ -36,11 +38,10 @@ const ArtistCreate = () => {
             .uploadImage(uploadData)
             .then(response => {
                 console.log("response is: ", response)
-                setArtist(response.fileUrl);
+                setArtist({ ...artist, imageUrl: response.fileUrl });
             })
             .catch(err => console.log("Error while uploading the file: ", err));
     };
-
     return (
         <>
             <div style={{ marginTop: '60px' }}></div>
@@ -119,7 +120,7 @@ const ArtistCreate = () => {
                     <Form.Group className="position-relative mb-3">
                         <Form.Label>File</Form.Label>
                         <Form.Control
-                            onChange={(event) => handleFileUpload(event)}
+                            onChange={handleFileUpload}
                             type="file"
                             name="file"
                         />

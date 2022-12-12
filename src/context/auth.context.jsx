@@ -8,7 +8,11 @@ const LOCAL_STORAGE_AUTH = 'tokenAuth';
 
 export const AuthProvider = (props) => {
     const [user, setUser] = useState(null);
+    const [gallerist, setGallerist] = useState()
     const navigate = useNavigate();
+
+    const [isLoading, setIsLoading] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const storeSetToken = (token) => {
         localStorage.setItem(LOCAL_STORAGE_AUTH, token);
@@ -26,10 +30,15 @@ export const AuthProvider = (props) => {
                 .me(token)
                 .then((user) => {
                     setUser(user);
+                    setIsLoggedIn(true)
                 })
                 .catch((err) => {
-                    console.error(err);
-                });
+                    console.error(err); setIsLoggedIn(false)
+
+                })
+                .finally(() => {
+                    setIsLoading(false)
+                })
         } else {
             setUser(null);
             // navigate('/auth/register');
@@ -47,7 +56,7 @@ export const AuthProvider = (props) => {
 
     return (
         <AuthContext.Provider
-            value={{ authentication, storeSetToken, logOut, user }}
+            value={{ authentication, storeSetToken, isLoading, setIsLoading, isLoggedIn, logOut, user }}
         >
             {props.children}
         </AuthContext.Provider>

@@ -4,6 +4,7 @@ import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-k
 
 const FooterComponent = () => {
     return (
+
         <MDBFooter bgColor='black' className='text-center text-lg-start text-muted footer'>
             <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
                 <div className='me-5 d-none d-lg-block footer-color'>
@@ -37,11 +38,10 @@ const FooterComponent = () => {
                     <MDBRow className='mt-3'>
                         <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4 text-white text-white'>
-                                Company name
+                                Gallery
                             </h6>
                             <p className="footer-color">
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit
-                                amet, consectetur adipisicing elit.
+                                Negative space was founded in 2022 by two friends who shared a dream, cause we didn't have enough sleep. Recieves it name by the Japanese concept of time and space called Ma(間), It has been described as a pause in time, an interval or emptiness in space, and in arts, as in life, enhances the importance of a pause.
                             </p>
                         </MDBCol>
 
@@ -121,6 +121,7 @@ const FooterComponent = () => {
                 </a>
             </div>
         </MDBFooter>
+
     );
 }
 

@@ -2,14 +2,18 @@ import { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import AuthAPI from '../../services/auth.service';
 import { AuthContext } from '../../context/auth.context';
+import { useNavigate } from 'react-router-dom'
 
 const LoginPage = () => {
     const [user, setUser] = useState({});
-    const { storeSetToken, authentication } = useContext(AuthContext);
+    const { storeSetToken, authentication, setIsLoading } = useContext(AuthContext);
 
+
+    const navigate = useNavigate()
     const onChangeUser = (event) => {
         const { name, value } = event.target;
         setUser({ ...user, [name]: value });
+
     };
 
     const LoginUser = (event) => {
@@ -17,7 +21,9 @@ const LoginPage = () => {
         AuthAPI.loginUser(user).then((res) => {
             console.log(res.token);
             storeSetToken(res.token);
+            setIsLoading(true)
             authentication();
+            navigate('/')
         });
     };
 

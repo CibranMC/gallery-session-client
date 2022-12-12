@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import ArtworkAPI from '../../services/artworks.service'
 import { Col, Container, Row, Button, Form } from 'react-bootstrap'
@@ -7,7 +7,9 @@ const ArtworkCreate = () => {
     const navigate = useNavigate();
     const [artwork, setArtwork] = useState({});
 
-
+    useEffect(() => {
+        console.log("Test Use Effect", artwork)
+    }, [artwork])
 
     const createNewArtwork = (event) => {
         event.preventDefault()
@@ -23,17 +25,18 @@ const ArtworkCreate = () => {
     }
 
     const handleFileUpload = (event) => {
-        setArtwork({ artwork })
+        const { name, value } = event.target
+        setArtwork({ ...artwork, [name]: value })
 
         const uploadData = new FormData();
 
         uploadData.append("imageArtworkUrl", event.target.files[0]);
-        console.log(uploadData.get("imageArtworkUrl"))
+
         ArtworkAPI
             .uploadImage(uploadData)
             .then(response => {
                 console.log("response is: ", response)
-                setArtwork(response.fileUrl);
+                setArtwork({ ...artwork, imageArtworkUrl: response.fileUrl });
             })
             .catch(err => console.log("Error while uploading the file: ", err));
     };
@@ -150,7 +153,7 @@ const ArtworkCreate = () => {
                     <Form.Group className="position-relative mb-3">
                         <Form.Label>File</Form.Label>
                         <Form.Control
-                            onChange={(event) => handleFileUpload(event)}
+                            onChange={handleFileUpload}
                             type="file"
                             name="file"
                         />

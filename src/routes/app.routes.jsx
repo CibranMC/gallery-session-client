@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { useContext } from 'react';
 import HomePage from './../pages/HomePage/HomePage';
 import ArtistsList from './../pages/ArtistsPage/ArtistsPage';
+import IsPrivate from './isPrivate'
 import ArtworksList from './../pages/ArtworksPage/ArtworksPage';
 import ArtistCreate from './../pages/ArtistCreatePage/ArtistCreatePage';
 import ArtworkCreate from './../pages/ArtworkCreatePage/ArtworkCreatePage';
@@ -25,7 +26,7 @@ const AppRoutes = () => {
             <Route path='/auth/login' element={<LoginPage />} />
             <Route path='/artists' element={<ArtistsList />} />
             <Route path='/artworks' element={<ArtworksList />} />
-            <Route path='/create-artist' element={<ArtistCreate />} />
+            <Route path='/create-artist' element={<IsPrivate><ArtistCreate /></IsPrivate>} />
             <Route path='/create-artwork' element={<ArtworkCreate />} />
             <Route path='/shop' element={<ShopPage />} />
             <Route path='/artists/:id' element={<ArtistDetail />} />

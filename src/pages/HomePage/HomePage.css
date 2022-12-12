@@ -18,11 +18,37 @@
     text-align: left;
     margin-top: 10px;
     padding-bottom: 20px;
+    margin-left: 10px;
+
+}
+
+.focus {
+    text-align: left;
+    color: grey;
+    margin-top: -15px;
+    margin-left: 15px;
 
 }
 
 .article {
-    text-align: center;
-    margin-bottom: 100px;
+    position: relative;
 
+    justify-content: center;
+    text-align: center;
+    margin: 100px 0 0 100px;
+    display: flex;
+    width: 100vh;
+
+
+}
+
+.lauraimg {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: 25px 0 20px 150px
+}
+
+.divimg {
+    margin: 30px 0 0 30px;
 }
