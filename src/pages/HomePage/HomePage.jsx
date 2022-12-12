@@ -37,7 +37,9 @@ const HomePage = () => {
 
             <section className='section'>
 
-                <article>
+                <h5 className='title'>TABITHA MILLETT</h5>
+
+                <article className='article'>
                     <p>hola amigos que tal esto funciona?</p>
                 </article>
             </section>

@@ -22,6 +22,23 @@ const ArtworkCreate = () => {
         setArtwork({ ...artwork, [name]: value })
     }
 
+    const handleFileUpload = (event) => {
+        setArtwork({ artwork })
+
+        const uploadData = new FormData();
+
+        uploadData.append("imageArtworkUrl", event.target.files[0]);
+        console.log(uploadData.get("imageArtworkUrl"))
+        ArtworkAPI
+            .uploadImage(uploadData)
+            .then(response => {
+                console.log("response is: ", response)
+                setArtwork(response.fileUrl);
+            })
+            .catch(err => console.log("Error while uploading the file: ", err));
+    };
+
+
     return (
         <>
             <div style={{ marginTop: '60px' }}></div>
@@ -133,7 +150,7 @@ const ArtworkCreate = () => {
                     <Form.Group className="position-relative mb-3">
                         <Form.Label>File</Form.Label>
                         <Form.Control
-                            onChange={updateNewArtwork}
+                            onChange={(event) => handleFileUpload(event)}
                             type="file"
                             name="file"
                         />

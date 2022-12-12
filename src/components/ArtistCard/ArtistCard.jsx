@@ -1,24 +1,17 @@
 
-import { Button, Card } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 
 
 const ArtistCard = ({ artist }) => {
 
     return (
         <>
-            <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Card.Img
-                        src={artist.imageUrl}
-                        alt={artist.name} />
+            <Container>
+                <img className="artists-img" src={artist.imageUrl} alt={artist.name} />
+                <h2>{artist.name} {artist.lastName}</h2>
+                <p>{artist.description}</p>
 
-
-                    <Card.Title>{artist.name} {artist.lastName}</Card.Title>
-                    <Card.Text>{artist.userName}</Card.Text>
-                    <Card.Text>{artist.description}</Card.Text>
-                    <Card.Text>{artist.email}</Card.Text>
-                </Card.Body>
-            </Card>
+            </Container>
         </>
     )
 }

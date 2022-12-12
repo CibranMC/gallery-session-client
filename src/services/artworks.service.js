@@ -11,9 +11,14 @@ class ArtWorksAPI extends InitAxios {
             .then((response) => response.data)
     }
 
+    uploadImage(file) {
+        return this.axios.post('/uploadimage', file).then((response) => response.data)
+    }
+
     createArtwork(body) {
         return this.axios.post('/', body).then((response) => response.data)
     }
+
 
     getOneArtworkById(id) {
         return this.axios.get(`/${id}`).then((response) => response.data)

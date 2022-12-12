@@ -3,6 +3,10 @@
     height: 30px;
 }
 
+.footer {
+    margin-top: 100px;
+}
+
 .footer-color {
     color: #949494 !important;
     text-decoration: none

@@ -107,24 +107,7 @@ const ArtistCreate = () => {
                                 name="description"
                             />
                         </Form.Group>
-                        <Form.Group
-                            as={Col}
-                            md="3"
-                            controlId="validationFormik104"
-                            className="position-relative"
-                        >
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control
-                                onChange={updateNewArtist}
-                                type="text"
-                                placeholder="Email"
-                                name="email"
 
-                            />
-                            <Form.Control.Feedback type="invalid" tooltip>
-
-                            </Form.Control.Feedback>
-                        </Form.Group>
                         <Form.Group
                             as={Col}
                             md="3"
