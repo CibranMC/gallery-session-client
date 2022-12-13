@@ -4,9 +4,10 @@ import AuthAPI from '../../services/auth.service';
 import { AuthContext } from '../../context/auth.context';
 import { useNavigate } from 'react-router-dom'
 
+
 const LoginPage = () => {
     const [user, setUser] = useState({});
-    const { storeSetToken, authentication, setIsLoading } = useContext(AuthContext);
+    const { storeSetToken, authentication, setIsLoading, setIsLoggedIn } = useContext(AuthContext);
 
 
     const navigate = useNavigate()
@@ -19,12 +20,13 @@ const LoginPage = () => {
     const LoginUser = (event) => {
         event.preventDefault();
         AuthAPI.loginUser(user).then((res) => {
-            console.log(res.token);
+            console.log("funciona", user)
             storeSetToken(res.token);
             setIsLoading(true)
             authentication();
             navigate('/')
-        });
+        })
+            .catch(err => console.log(err))
     };
 
     return (

@@ -6,7 +6,7 @@ import './Navbar.css';
 import { useContext } from 'react';
 
 function NavbarComponent() {
-    const { logOut, isLoggedIn } = useContext(AuthContext)
+    const { logOut, isLoggedIn, user } = useContext(AuthContext)
 
 
     return (

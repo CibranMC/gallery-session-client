@@ -5,6 +5,14 @@ class AuthAPI extends InitAxios {
         super('auth')
     }
 
+    me(token) {
+        return this.axios.get('/', {
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        }).then((response) => response.data);
+    }
+
     registerUser(body) {
         return this.axios.post('/register', body).then((response) => response.data);
     }
