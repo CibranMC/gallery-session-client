@@ -5,9 +5,9 @@ class ArtWorksAPI extends InitAxios {
         super('artworks')
     }
 
-    getAllArtworks() {
+    getAllArtworks(page) {
         return this.axios
-            .get(`/?limit=8&offset=0`)
+            .get(`/?limit=15&offset=${page}`)
             .then((response) => response.data)
     }
 

@@ -1,11 +1,25 @@
 import './ArtworksPage.css'
 import { useEffect, useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Container, Row, Pagination } from 'react-bootstrap'
 import ArtWorksAPI from '../../services/artworks.service'
 import { Link } from 'react-router-dom'
 
 const ArtworksList = () => {
     const [artworks, setArtworks] = useState([])
+    const [pagination, setPagination] = useState(0)
+    const [maxPage, setMaxPage] = useState(0)
+
+    const reloadArtworks = (pagination) => {
+        ArtWorksAPI.getAllArtworks(pagination).then((artworks) => {
+            console.log(artworks)
+            setArtworks(artworks)
+            setMaxPage(artworks.maxPage)
+        })
+    }
+
+    useEffect(() => {
+        reloadArtworks(pagination)
+    }, [pagination])
 
     useEffect(() => {
         ArtWorksAPI.getAllArtworks().then((artworks) => {
@@ -30,6 +44,24 @@ const ArtworksList = () => {
                             )
                         })
                     }
+                </Row>
+                <Row>
+                    <Pagination>
+                        <Pagination.First as='span' onClick={() => setPagination(0)} />
+                        <Pagination.Prev
+                            as='span'
+                            onClick={() =>
+                                setPagination((lastPagination) => lastPagination - 1)
+                            }
+                        />
+                        <Pagination.Next
+                            as='span'
+                            onClick={() =>
+                                setPagination((lastPagination) => lastPagination + 1)
+                            }
+                        />
+                        <Pagination.Last as='span' onClick={() => setPagination(maxPage)} />
+                    </Pagination>
                 </Row>
             </Container>
         </div >

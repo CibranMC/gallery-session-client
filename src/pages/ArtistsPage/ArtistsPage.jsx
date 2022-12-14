@@ -1,12 +1,25 @@
 import './ArtistsPage.css'
 import { useEffect, useState } from 'react'
-import { Card, Col, Container, Row, Button } from 'react-bootstrap'
+import { Col, Container, Row, Pagination } from 'react-bootstrap'
 import ArtistAPI from '../../services/artists.service'
 import { Link } from 'react-router-dom'
 import Searchbar from '../../components/SearchBar/searchbar'
 
 const ArtistsList = () => {
     const [artists, setArtists] = useState([])
+    const [pagination, setPagination] = useState(0)
+    const [maxPage, setMaxPage] = useState(0)
+
+    const reloadArtists = (pagination) => {
+        ArtistAPI.getAllArtists(pagination).then((artists) => {
+            setArtists(artists.results)
+            setMaxPage(artists.maxPage)
+        })
+    }
+
+    useEffect(() => {
+        reloadArtists(pagination)
+    }, [pagination])
     useEffect(() => {
         ArtistAPI.getAllArtists().then((artists) => {
             console.log(artists)
@@ -14,8 +27,6 @@ const ArtistsList = () => {
         })
     }, [])
 
-    // const [pagination, setPagination] = useState(0)
-    // const [maxPage, setMaxPage] = useState(0)
     return (
         <div className='Artists-list'>
 
@@ -32,6 +43,24 @@ const ArtistsList = () => {
                             )
                         })
                     }
+                </Row>
+                <Row>
+                    <Pagination>
+                        <Pagination.First as='span' onClick={() => setPagination(0)} />
+                        <Pagination.Prev
+                            as='span'
+                            onClick={() =>
+                                setPagination((lastPagination) => lastPagination - 1)
+                            }
+                        />
+                        <Pagination.Next
+                            as='span'
+                            onClick={() =>
+                                setPagination((lastPagination) => lastPagination + 1)
+                            }
+                        />
+                        <Pagination.Last as='span' onClick={() => setPagination(maxPage)} />
+                    </Pagination>
                 </Row>
             </Container>
         </div>
