@@ -55,9 +55,10 @@ const ArtworkCreate = () => {
                             controlId="validationFormik101"
                             className="position-relative"
                         >
-                            <Form.Label>First name</Form.Label>
+                            <Form.Label>Artwork title</Form.Label>
                             <Form.Control
                                 onChange={updateNewArtwork}
+                                placeholder="Artwork Title"
                                 type="text"
                                 name="name"
 
@@ -73,6 +74,7 @@ const ArtworkCreate = () => {
                             <Form.Label>Artist Name</Form.Label>
                             <Form.Control
                                 onChange={updateNewArtwork}
+                                placeholder="Artist name"
                                 type="text"
                                 name="artistName"
                             />
@@ -116,8 +118,8 @@ const ArtworkCreate = () => {
                         <Form.Control
                             onChange={updateNewArtwork}
                             type="text"
-                            placeholder="Email"
-                            name="email"
+                            placeholder="Year"
+                            name="Year"
 
                         />
                         <Form.Control.Feedback type="invalid" tooltip>
@@ -151,7 +153,7 @@ const ArtworkCreate = () => {
                         </Form.Group>
                     </Row>
                     <Form.Group className="position-relative mb-3">
-                        <Form.Label>File</Form.Label>
+                        <Form.Label>Photo</Form.Label>
                         <Form.Control
                             onChange={handleFileUpload}
                             type="file"

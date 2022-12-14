@@ -14,7 +14,7 @@ function NavbarComponent() {
             <Navbar className="NavBar" collapseOnSelect expand="sm" bg="black" variant="dark">
                 <Container>
 
-                    <Navbar.Brand href="#home">間</Navbar.Brand>
+                    <Navbar.Brand className="brand" href="#home">間</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse className='navbar-collapse' id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -26,7 +26,6 @@ function NavbarComponent() {
                                 <NavDropdown.Item><Button variant="link" as={Link} to="/create-artwork"><b>Create Artwork</b></Button></NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link ><Link className="link-navbar" to="#home">Exhibitions</Link></Nav.Link>
-                            <Nav.Link ><Link className="link-navbar" to="/shop">Shop</Link></Nav.Link>
                             <Nav.Link ><Link className="link-navbar" to="/footer">Contact Us</Link></Nav.Link>
 
                             {isLoggedIn ? (

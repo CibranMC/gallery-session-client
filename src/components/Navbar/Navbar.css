@@ -9,6 +9,10 @@
     z-index: 100;
 }
 
+.brand {
+    padding-bottom: 15px;
+}
+
 .link-navbar {
     color: white;
     text-decoration: none;

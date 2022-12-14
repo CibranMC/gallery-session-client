@@ -1,13 +1,11 @@
 .carousel {
     position: relative;
     width: 100%;
-    height: 500px;
-    margin: auto
+    margin: auto;
 }
 
 .home-page {
     width: 100% !important;
-    height: 100vh !important;
 }
 
 .section-one {
@@ -30,16 +28,22 @@
 
 }
 
-.article {
-    position: relative;
+.section-two {
+    margin-top: 70px;
+}
 
+.week-artist {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+}
+
+.article {
+    width: 700px;
+    position: relative;
     justify-content: center;
     text-align: center;
     margin: 100px 0 0 100px;
-    display: flex;
-    width: 100vh;
-
-
 }
 
 .lauraimg {
@@ -49,6 +53,19 @@
     margin: 25px 0 20px 150px
 }
 
-.divimg {
-    margin: 30px 0 0 30px;
+
+@media (max-width: 1200px) and (min-width: 950px) {
+    .article {
+        width: 500px;
+    }
+}
+
+@media (max-width: 950px) {
+    .week-artist {
+        display: block
+    }
+
+    .section-one {
+        height: auto;
+    }
 }

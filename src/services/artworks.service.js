@@ -23,6 +23,10 @@ class ArtWorksAPI extends InitAxios {
     getOneArtworkById(id) {
         return this.axios.get(`/${id}`).then((response) => response.data)
     }
+
+    galleryImage() {
+        return this.axios.post
+    }
 }
 
 export default new ArtWorksAPI()

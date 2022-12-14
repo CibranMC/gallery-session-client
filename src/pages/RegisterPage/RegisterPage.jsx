@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import AuthAPI from '../../services/auth.service';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const [newUser, setNewUser] = useState({})
 
+
+    const navigate = useNavigate()
     const onChangeNewUser = (event) => {
         const { name, value } = event.target;
         setNewUser({ ...newUser, [name]: value });
@@ -14,6 +17,7 @@ const Register = () => {
         event.preventDefault();
         AuthAPI.registerUser(newUser).then((res) => {
             console.log(res);
+            navigate('/auth/login')
         });
     };
 

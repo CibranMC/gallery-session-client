@@ -23,6 +23,7 @@ const LoginPage = () => {
             console.log("funciona", user)
             storeSetToken(res.token);
             setIsLoading(true)
+            setIsLoggedIn(true)
             authentication();
             navigate('/')
         })
