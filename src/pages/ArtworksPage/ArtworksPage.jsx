@@ -12,7 +12,7 @@ const ArtworksList = () => {
     const reloadArtworks = (pagination) => {
         ArtWorksAPI.getAllArtworks(pagination).then((artworks) => {
             console.log(artworks)
-            setArtworks(artworks)
+            setArtworks(artworks.results)
             setMaxPage(artworks.maxPage)
         })
     }

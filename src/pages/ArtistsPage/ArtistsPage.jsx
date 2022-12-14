@@ -20,6 +20,8 @@ const ArtistsList = () => {
     useEffect(() => {
         reloadArtists(pagination)
     }, [pagination])
+
+
     useEffect(() => {
         ArtistAPI.getAllArtists().then((artists) => {
             console.log(artists)

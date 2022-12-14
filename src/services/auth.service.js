@@ -20,6 +20,16 @@ class AuthAPI extends InitAxios {
     loginUser(body) {
         return this.axios.post('/login', body).then((response) => response.data);
     }
+
+    cartUpdate(token) {
+        return this.axios.post('/profile', {
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        }).then((response) => response.data)
+    }
 }
 
 export default new AuthAPI();
+
+//req user en el back,usar el middlewarre y pasar por headers el token

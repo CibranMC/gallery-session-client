@@ -13,6 +13,7 @@ export const AuthProvider = (props) => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isGallerist, setGallerist] = useState(false)
 
     const storeSetToken = (token) => {
         console.log(token)
@@ -25,13 +26,12 @@ export const AuthProvider = (props) => {
 
     const authentication = () => {
         const token = localStorage.getItem(LOCAL_STORAGE_AUTH);
-        console.log(token)
+
         if (token) {
             AuthAPI
                 .me(token)
                 .then((user) => {
                     setUser(user);
-
                     console.log(user)
                 }).then(() => setIsLoggedIn(true))
                 .catch((err) => {

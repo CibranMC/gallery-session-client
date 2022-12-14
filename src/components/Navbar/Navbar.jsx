@@ -7,7 +7,7 @@ import { useContext } from 'react';
 
 function NavbarComponent() {
     const { logOut, isLoggedIn, user } = useContext(AuthContext)
-
+    console.log(user);
 
     return (
         <>
@@ -15,30 +15,34 @@ function NavbarComponent() {
                 <Container>
 
                     <Navbar.Brand className="brand" href="#home">間</Navbar.Brand>
+
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse className='navbar-collapse' id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link><Link className="link-navbar" to='/'>Home</Link></Nav.Link>
                             <Nav.Link ><Link className="link-navbar" to='/artists'>Artists</Link></Nav.Link>
                             <Nav.Link ><Link className="link-navbar" to="/artworks">Artworks</Link></Nav.Link>
-                            <NavDropdown className="nav-drop" title="Cathalogue" id="basic-nav-dropdown" alignright="true">
-                                <NavDropdown.Item><Button variant="link" as={Link} to="/create-artist"><b>Create Artist</b></Button></NavDropdown.Item>
-                                <NavDropdown.Item><Button variant="link" as={Link} to="/create-artwork"><b>Create Artwork</b></Button></NavDropdown.Item>
-                            </NavDropdown>
+                            {
+                                isLoggedIn && user?.role === 'Gallerist' &&
+                                <NavDropdown className="nav-drop" title="Cathalogue" id="basic-nav-dropdown" alignright="true">
+                                    <NavDropdown.Item><Button variant="link" as={Link} to="/create-artist"><b>Create Artist</b></Button></NavDropdown.Item>
+                                    <NavDropdown.Item><Button variant="link" as={Link} to="/create-artwork"><b>Create Artwork</b></Button></NavDropdown.Item>
+                                </NavDropdown>
+                            }
                             <Nav.Link ><Link className="link-navbar" to="#home">Exhibitions</Link></Nav.Link>
                             <Nav.Link ><Link className="link-navbar" to="/footer">Contact Us</Link></Nav.Link>
+
+
 
                             {isLoggedIn ? (
                                 <>
                                     <Nav.Link as='span'>
-                                        <Link className='link-navbar' to='/'>
+                                        <Link className='link-navbar' to='/auth/profile'>
                                             User
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link as='span'>
-                                        <p className='link-navbar' onClick={logOut}>
-                                            Log out
-                                        </p>
+                                        <Link className='link-navbar' to='/' onClick={logOut}>Log out</Link>
                                     </Nav.Link>
                                 </>
                             ) : (

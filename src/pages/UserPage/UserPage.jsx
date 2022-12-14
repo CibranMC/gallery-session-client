@@ -7,6 +7,7 @@ const UserPage = () => {
     return (
         <div style={{ margin: '60px' }}>
             <h1>{user.email}</h1>
+
         </div>
     );
 };

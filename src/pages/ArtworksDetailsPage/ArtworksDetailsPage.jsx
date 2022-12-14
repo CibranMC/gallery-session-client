@@ -1,14 +1,36 @@
+import { AuthContext } from '../../context/auth.context';
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import ArtWorksAPI from '../../services/artworks.service'
 import ArtworkCard from '../../components/ArtworkCard/ArtworkCard'
 import StripeAPI from '../../services/stripe.service'
+import { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+import AuthAPI from '../../services/auth.service'
 
 
 const ArtworkDetail = () => {
     const { id } = useParams()
     const [artwork, setArtwork] = useState(undefined);
+    const { isLoggedIn } = useContext(AuthContext);
 
+    const handleCart = (event) => {
+        event.preventDefault()
+
+        AuthAPI.cartUpdate().then(() => {
+            console.log(AuthAPI.cartUpdate)
+            setArtwork(artwork.cart)
+        })
+    }
+    AuthAPI.cartUpdate()
+
+
+    // const addToCart = (id) = {
+
+    //     if(!cart.includes(id)) setCart(cart.concat(id));
+    //     console.log(id)
+    // }
 
     const handleCheckout = (event) => {
         event.preventDefault()
@@ -21,7 +43,6 @@ const ArtworkDetail = () => {
 
     useEffect(() => {
         ArtWorksAPI.getOneArtworkById(id).then((artwork) => {
-            console.log(artwork)
             setArtwork(artwork);
         })
 
@@ -31,7 +52,12 @@ const ArtworkDetail = () => {
         <>
             {artwork && <ArtworkCard artwork={artwork} />}
             <form method="POST" >
-                <button onClick={handleCheckout}>check</button> </form >
+                {isLoggedIn ? (
+                    <Button variant="link" onClick={handleCheckout}>check</Button>)
+                    : (<Button variant="link" as={Link} to="/auth/register">check</Button>)}
+            </form >
+            <button onClick={handleCart}>favorito</button>
+
         </>
 
     )
