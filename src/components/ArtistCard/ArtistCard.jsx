@@ -11,7 +11,7 @@ const ArtistCard = ({ artist }) => {
                 <Row>
                     <Col className='col-text'>
                         <h2>{artist.name} {artist.lastName}</h2>
-
+                        <hr class="solid"></hr>
                         <p>{artist.description}</p>
                         <p>{artist.id}</p>
 
