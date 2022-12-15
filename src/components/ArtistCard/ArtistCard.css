@@ -9,3 +9,7 @@ artist-img {
     width: 300px;
     height: 300px;
 }
+
+hr.solid {
+    border-top: 3px solid #bbb;
+}
