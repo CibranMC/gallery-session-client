@@ -26,6 +26,7 @@ const ArtworkCreate = () => {
 
     const handleFileUpload = (event) => {
         const { name, value } = event.target
+
         setArtwork({ ...artwork, [name]: value })
 
         const uploadData = new FormData();

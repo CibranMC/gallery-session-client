@@ -10,8 +10,8 @@ const ArtistCard = ({ artist }) => {
             <Container>
                 <Row>
                     <Col className='col-text'>
-                        <h2>{artist.name}</h2>
-                        <h5>{artist.lastName}</h5>
+                        <h2>{artist.name} {artist.lastName}</h2>
+
                         <p>{artist.description}</p>
                         <p>{artist.id}</p>
 
