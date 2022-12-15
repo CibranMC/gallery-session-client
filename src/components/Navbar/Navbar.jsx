@@ -29,8 +29,7 @@ function NavbarComponent() {
                                     <NavDropdown.Item><Button variant="link" as={Link} to="/create-artwork"><b>Create Artwork</b></Button></NavDropdown.Item>
                                 </NavDropdown>
                             }
-                            <Nav.Link ><Link className="link-navbar" to="#home">Exhibiciones</Link></Nav.Link>
-                            <Nav.Link ><Link className="link-navbar" onClick={() => { window.location.href = "#footer" }}>Contact Us</Link></Nav.Link>
+                            <Nav.Link ><Link className="link-navbar" onClick={() => { window.location.href = "#footer" }}>Contacto</Link></Nav.Link>
 
 
 
@@ -42,19 +41,19 @@ function NavbarComponent() {
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link as='span'>
-                                        <Link className='link-navbar' to='/' onClick={logOut}>Log out</Link>
+                                        <Link className='link-navbar' to='/' onClick={logOut}>Desconectarse</Link>
                                     </Nav.Link>
                                 </>
                             ) : (
                                 <>
                                     <Nav.Link as='span'>
                                         <Link className='link-navbar' to='auth/register'>
-                                            Sign up
+                                            Registro
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link as='span'>
                                         <Link className='link-navbar' to='/auth/login'>
-                                            Login
+                                            Iniciar sesión
                                         </Link>
                                     </Nav.Link>
 

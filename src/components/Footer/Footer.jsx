@@ -50,55 +50,32 @@ const FooterComponent = () => {
                             <h6 className='text-uppercase fw-bold mb-4 text-white'>Productos</h6>
                             <p>
                                 <a href='#!' className='text-reset footer-color'>
-                                    Angular
+                                    Venta de Arte
                                 </a>
                             </p>
                             <p>
                                 <a href='#!' className='text-reset footer-color'>
-                                    React
+                                    Art consulting
                                 </a>
                             </p>
                             <p>
                                 <a href='#!' className='text-reset footer-color'>
-                                    Vue
+                                    Catalogación
                                 </a>
                             </p>
                             <p>
                                 <a href='#!' className='text-reset footer-color'>
-                                    Laravel
+                                    Tasación
                                 </a>
                             </p>
                         </MDBCol>
 
-                        <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-4 text-white'>Useful links</h6>
-                            <p>
-                                <a href='#!' className='text-reset footer-color'>
-                                    Pricing
-                                </a>
-                            </p>
-                            <p>
-                                <a href='#!' className='text-reset footer-color'>
-                                    Settings
-                                </a>
-                            </p>
-                            <p>
-                                <a href='#!' className='text-reset footer-color'>
-                                    Orders
-                                </a>
-                            </p>
-                            <p>
-                                <a href='#!' className='text-reset footer-color'>
-                                    Help
-                                </a>
-                            </p>
-                        </MDBCol>
 
                         <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4 text-white'>Contacto</h6>
                             <p className='me-2 footer-color'>
                                 <MDBIcon icon='home' className='me-2 footer-color' />
-                                Santiago de Compostela
+                                Santiago de Compostela /
                                 Vigo
 
                             </p>
@@ -120,7 +97,7 @@ const FooterComponent = () => {
             <div className='text-center p-4 footer-color' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
                 © 2022 Copyright:
                 <a className='text-reset fw-bold footer-color' href='https://mdbootstrap.com/'>
-                    Los incredíbles Vani Dázquez y Mibrán Celéndez
+                    Daniel Vázquez González y Cibrán Meléndez Cabo
                 </a>
             </div>
         </MDBFooter>

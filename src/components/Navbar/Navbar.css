@@ -42,6 +42,7 @@
 }
 
 .btn {
-    color: blueviolet !important;
+    color: blue !important;
+    background-color: white !important;
     text-decoration: none;
 }
