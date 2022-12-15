@@ -8,7 +8,7 @@ const FooterComponent = () => {
         <MDBFooter id="footer" name="footer" bgColor='black' className='text-center text-lg-start text-muted footer'>
             <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
                 <div className='me-5 d-none d-lg-block footer-color'>
-                    <span>Get connected with us on social networks:</span>
+                    <span>Nuestras redes:</span>
                 </div>
 
                 <div>
@@ -38,15 +38,16 @@ const FooterComponent = () => {
                     <MDBRow className='mt-3'>
                         <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4 text-white text-white'>
-                                Gallery
+                                Gallería
                             </h6>
                             <p className="footer-color">
-                                Negative space was founded in 2022 by two friends who shared a dream, cause we didn't have enough sleep. Recieves it name by the Japanese concept of time and space called Ma(間), It has been described as a pause in time, an interval or emptiness in space, and in arts, as in life, enhances the importance of a pause.
+
+                                La galería Espacio Negativo fue fundada hace un par de semanas por dos historiadores del arte en paro. Recive su nombre del término Japonés conocido como Ma(間), o espacio vacío. Descrito como una pausa en el tiempo, un intervalo o salto en el espacio, este término es usado tanto en las artes como en la vida para resaltar la importancia de la pausa y los espacios vacíos.
                             </p>
                         </MDBCol>
 
                         <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-4 text-white'>Products</h6>
+                            <h6 className='text-uppercase fw-bold mb-4 text-white'>Productos</h6>
                             <p>
                                 <a href='#!' className='text-reset footer-color'>
                                     Angular
@@ -94,10 +95,12 @@ const FooterComponent = () => {
                         </MDBCol>
 
                         <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-4 text-white'>Contact</h6>
+                            <h6 className='text-uppercase fw-bold mb-4 text-white'>Contacto</h6>
                             <p className='me-2 footer-color'>
                                 <MDBIcon icon='home' className='me-2 footer-color' />
-                                New York, NY 10012, US
+                                Santiago de Compostela
+                                Vigo
+
                             </p>
                             <p className='me-3 footer-color'>
                                 <MDBIcon icon='envelope' className='me-3 footer-color' />

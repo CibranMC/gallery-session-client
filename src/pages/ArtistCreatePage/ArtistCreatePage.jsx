@@ -46,7 +46,7 @@ const ArtistCreate = () => {
     return (
         <>
             <div style={{ marginTop: '60px' }}></div>
-            <h1>CREATE</h1>
+            <h1>CREAR</h1>
             <Form onSubmit={createNewArtist}>
                 <Container>
                     <Row className="mb-3">
@@ -56,7 +56,7 @@ const ArtistCreate = () => {
                             controlId="validationFormik101"
                             className="position-relative"
                         >
-                            <Form.Label>First name</Form.Label>
+                            <Form.Label>Nombre</Form.Label>
                             <Form.Control
                                 onChange={updateNewArtist}
                                 type="text"
@@ -72,7 +72,7 @@ const ArtistCreate = () => {
                             controlId="validationFormik102"
                             className="position-relative"
                         >
-                            <Form.Label>Last name</Form.Label>
+                            <Form.Label>Apellidos</Form.Label>
                             <Form.Control
                                 onChange={updateNewArtist}
                                 type="text"
@@ -101,7 +101,7 @@ const ArtistCreate = () => {
                             controlId="validationFormik103"
                             className="position-relative"
                         >
-                            <Form.Label className='descriptiontext'>Description</Form.Label>
+                            <Form.Label className='descriptiontext'>Descripción</Form.Label>
                             <Form.Control
                                 className='descriptionbox'
                                 onChange={updateNewArtist}
@@ -119,7 +119,7 @@ const ArtistCreate = () => {
                         </Form.Group>
                     </Row>
                     <Form.Group className="position-relative mb-3">
-                        <Form.Label className="filetext">File</Form.Label>
+                        <Form.Label className="filetext">Archivo</Form.Label>
                         <Form.Control
                             className='filecss'
                             onChange={handleFileUpload}
@@ -129,7 +129,7 @@ const ArtistCreate = () => {
                         <Form.Control.Feedback type="invalid" tooltip>
                         </Form.Control.Feedback>
                     </Form.Group>
-                    <Button type="submit">Add Artist</Button>
+                    <Button type="submit">Añade Artista</Button>
                 </Container>
             </Form>
         </>

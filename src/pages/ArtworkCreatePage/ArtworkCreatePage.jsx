@@ -46,7 +46,7 @@ const ArtworkCreate = () => {
     return (
         <>
             <div style={{ marginTop: '60px' }}></div>
-            <h1>CREATE</h1>
+            <h1>Crear</h1>
             <Form onSubmit={createNewArtwork}>
                 <Container>
                     <Row className="mb-3">
@@ -56,7 +56,7 @@ const ArtworkCreate = () => {
                             controlId="validationFormik101"
                             className="position-relative"
                         >
-                            <Form.Label>Artwork title</Form.Label>
+                            <Form.Label>Título de la obra</Form.Label>
                             <Form.Control
                                 onChange={updateNewArtwork}
                                 placeholder="Artwork Title"
@@ -72,7 +72,7 @@ const ArtworkCreate = () => {
                             controlId="validationFormik102"
                             className="position-relative"
                         >
-                            <Form.Label>Artist Name</Form.Label>
+                            <Form.Label>Nombre artista</Form.Label>
                             <Form.Control
                                 onChange={updateNewArtwork}
                                 placeholder="Artist name"
@@ -82,7 +82,7 @@ const ArtworkCreate = () => {
 
                             <Form.Control.Feedback tooltip>Looks good!</Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Label>Technique</Form.Label>
+                        <Form.Label>Técnica</Form.Label>
                         <Form.Control
                             onChange={updateNewArtwork}
                             type="text"
@@ -101,7 +101,7 @@ const ArtworkCreate = () => {
                             controlId="validationFormik103"
                             className="position-relative"
                         >
-                            <Form.Label>Description</Form.Label>
+                            <Form.Label>Descripción</Form.Label>
                             <Form.Control
                                 onChange={updateNewArtwork}
                                 type="textarea"
@@ -115,7 +115,7 @@ const ArtworkCreate = () => {
                             controlId="validationFormik104"
                             className="position-relative"
                         />
-                        <Form.Label>Year</Form.Label>
+                        <Form.Label>Año</Form.Label>
                         <Form.Control
                             onChange={updateNewArtwork}
                             type="text"
@@ -133,7 +133,7 @@ const ArtworkCreate = () => {
                             controlId="validationFormik104"
                             className="position-relative"
                         >
-                            <Form.Label>Price</Form.Label>
+                            <Form.Label>Precio</Form.Label>
                             <Form.Control
                                 onChange={updateNewArtwork}
                                 type="text"
@@ -154,7 +154,7 @@ const ArtworkCreate = () => {
                         </Form.Group>
                     </Row>
                     <Form.Group className="position-relative mb-3">
-                        <Form.Label>Photo</Form.Label>
+                        <Form.Label>Imagen</Form.Label>
                         <Form.Control
                             onChange={handleFileUpload}
                             type="file"
@@ -163,7 +163,7 @@ const ArtworkCreate = () => {
                         <Form.Control.Feedback type="invalid" tooltip>
                         </Form.Control.Feedback>
                     </Form.Group>
-                    <Button type="submit">Add Artwork</Button>
+                    <Button type="submit">Comprar</Button>
                 </Container>
             </Form>
         </>
