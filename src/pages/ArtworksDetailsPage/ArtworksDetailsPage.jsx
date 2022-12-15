@@ -39,7 +39,7 @@ const ArtworkDetail = () => {
 
     const handleCheckout = (event) => {
         event.preventDefault()
-        const body = { name: artwork.name, price: artwork.price, success_url: "http://localhost:3000/", cancel_url: "http://localhost:3000/" }
+        const body = { name: artwork.name, price: artwork.price, success_url: "https://gallery-session-client.vercel.app", cancel_url: "https://gallery-session-client.vercel.app" }
         StripeAPI.Payment(body).then(res => {
             window.document.location.href = res.url
         })
