@@ -8,11 +8,6 @@ const ArtistCreate = () => {
     const navigate = useNavigate();
     const [artist, setArtist] = useState({});
 
-
-    // useEffect(() => {
-    //     console.log("Test Use Effect", artist)
-    // }, [artist])
-
     const createNewArtist = (event) => {
         event.preventDefault()
         ArtistAPI.createArtist(artist)
@@ -42,6 +37,7 @@ const ArtistCreate = () => {
                 setArtist({ ...artist, imageUrl: response.fileUrl });
             })
             .catch(err => console.log("Error while uploading the file: ", err));
+
     };
     return (
         <>
@@ -129,7 +125,7 @@ const ArtistCreate = () => {
                         <Form.Control.Feedback type="invalid" tooltip>
                         </Form.Control.Feedback>
                     </Form.Group>
-                    <Button type="submit">Añade Artista</Button>
+                    <Button type="submit">Añadir Artista</Button>
                 </Container>
             </Form>
         </>

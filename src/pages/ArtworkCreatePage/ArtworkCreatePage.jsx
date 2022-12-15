@@ -163,7 +163,7 @@ const ArtworkCreate = () => {
                         <Form.Control.Feedback type="invalid" tooltip>
                         </Form.Control.Feedback>
                     </Form.Group>
-                    <Button type="submit">Comprar</Button>
+                    <Button type="submit">Añadir obra</Button>
                 </Container>
             </Form>
         </>

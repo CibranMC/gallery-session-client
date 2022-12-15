@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 const ArtistsList = () => {
     const [artists, setArtists] = useState([])
-    const [searchResults, setSearchResults] = useState([])
     const [pagination, setPagination] = useState(0)
     const [maxPage, setMaxPage] = useState(0)
 
@@ -18,19 +17,6 @@ const ArtistsList = () => {
         })
     }
 
-    //searchBar
-    // useEffect(() => {
-    //     ArtistAPI
-    //         .getAllArtists().then(json => {
-    //             setArtists(json)
-    //             return json
-    //         })
-    //         .then(json => {
-    //             setSearchResults(json)
-    //         })
-    // }, [])
-
-    // const results = setSearchResults.map(artist => <ArtistCard key={artist.id} artist={artist} />)
 
     useEffect(() => {
         reloadArtists(pagination)

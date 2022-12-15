@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import ArtistAPI from '../../services/artists.service'
 import ArtistCard from '../../components/ArtistCard/ArtistCard'
-import { Row, Container, Col } from 'react-bootstrap'
+import { Row, Container } from 'react-bootstrap'
 
 
 
