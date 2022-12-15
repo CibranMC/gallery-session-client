@@ -1,3 +1,4 @@
+import './ArtistCreatePage.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import ArtistAPI from '../../services/artists.service'
@@ -8,9 +9,9 @@ const ArtistCreate = () => {
     const [artist, setArtist] = useState({});
 
 
-    useEffect(() => {
-        console.log("Test Use Effect", artist)
-    }, [artist])
+    // useEffect(() => {
+    //     console.log("Test Use Effect", artist)
+    // }, [artist])
 
     const createNewArtist = (event) => {
         event.preventDefault()
@@ -100,11 +101,11 @@ const ArtistCreate = () => {
                             controlId="validationFormik103"
                             className="position-relative"
                         >
-                            <Form.Label>Description</Form.Label>
+                            <Form.Label className='descriptiontext'>Description</Form.Label>
                             <Form.Control
+                                className='descriptionbox'
                                 onChange={updateNewArtist}
                                 type="textarea"
-                                placeholder="Description"
                                 name="description"
                             />
                         </Form.Group>
@@ -118,8 +119,9 @@ const ArtistCreate = () => {
                         </Form.Group>
                     </Row>
                     <Form.Group className="position-relative mb-3">
-                        <Form.Label>File</Form.Label>
+                        <Form.Label className="filetext">File</Form.Label>
                         <Form.Control
+                            className='filecss'
                             onChange={handleFileUpload}
                             type="file"
                             name="file"
@@ -138,3 +140,5 @@ const ArtistCreate = () => {
 
 
 export default ArtistCreate;
+
+

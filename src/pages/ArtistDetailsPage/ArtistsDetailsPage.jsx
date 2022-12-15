@@ -24,8 +24,7 @@ const ArtistDetail = () => {
         <Container>
             <Row>
                 {artist && <ArtistCard artist={artist} />}
-                <Col>1 of 2</Col>
-                <Col>2 of 2</Col>
+
             </Row>
 
 

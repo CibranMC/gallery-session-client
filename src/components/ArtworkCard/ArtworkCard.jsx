@@ -18,7 +18,7 @@ const ArtworkCard = ({ artwork }) => {
                         <p>{artwork.price}€</p>
                     </Col>
 
-                    <Col><p className='col-img'><img className="artworks-img" src={artwork.imageArtworkUrl} alt={artwork.name} /></p></Col>
+                    <Col><p className='col-img'><img className="artworkcard-img" src={artwork.imageArtworkUrl} alt={artwork.name} /></p></Col>
 
 
                 </Row>

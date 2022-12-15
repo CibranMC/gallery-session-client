@@ -1,14 +1,57 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../../context/auth.context';
+import { Col, Container, Row, Pagination } from 'react-bootstrap'
+import { Link, useParams } from 'react-router-dom'
+import ArtworkDetail from '../ArtworksDetailsPage/ArtworksDetailsPage';
+import AuthAPI from '../../services/auth.service'
+
+
+
 
 const UserPage = () => {
-    const { user } = useContext(AuthContext);
+    const { id } = useParams()
+    // const { token } = useContext(AuthContext);
+    // const [cart, setCart] = useState(undefined);
+    const { user } = useContext(AuthContext)
+
+    console.log(user)
+
+    // useEffect(() => {
+    //     AuthAPI.cartUpdate(id, token).then((res) => {
+    //         storeSetToken(res.token)
+    //         console.log(cart)
+    //         setCart(res.cart)
+    //         authentication()
+    //     })
+
+    // }, [])
+
+
 
     return (
-        <div style={{ margin: '60px' }}>
-            <h1>{user.email}</h1>
+        <div>
+            <Container>
+                <Row xs={3} className='g-4'>
+                    {
+                        user?.cart.map((cart) => {
 
+                            return (
+                                <Col key={cart._id}>
+
+                                    <Link ><img className="artworks-img" src={cart.imageArtworkUrl} alt={cart.name} />
+
+                                        <p>{cart.name}</p>
+
+                                    </Link>
+
+                                </Col>
+                            )
+                        })
+                    }
+                </Row>
+            </Container>
         </div>
+
     );
 };
 

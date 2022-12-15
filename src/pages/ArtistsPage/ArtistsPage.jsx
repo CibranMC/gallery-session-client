@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react'
 import { Col, Container, Row, Pagination } from 'react-bootstrap'
 import ArtistAPI from '../../services/artists.service'
 import { Link } from 'react-router-dom'
-import Searchbar from '../../components/SearchBar/searchbar'
+
 
 const ArtistsList = () => {
     const [artists, setArtists] = useState([])
+    const [searchResults, setSearchResults] = useState([])
     const [pagination, setPagination] = useState(0)
     const [maxPage, setMaxPage] = useState(0)
 
@@ -16,6 +17,20 @@ const ArtistsList = () => {
             setMaxPage(artists.maxPage)
         })
     }
+
+    //searchBar
+    // useEffect(() => {
+    //     ArtistAPI
+    //         .getAllArtists().then(json => {
+    //             setArtists(json)
+    //             return json
+    //         })
+    //         .then(json => {
+    //             setSearchResults(json)
+    //         })
+    // }, [])
+
+    // const results = setSearchResults.map(artist => <ArtistCard key={artist.id} artist={artist} />)
 
     useEffect(() => {
         reloadArtists(pagination)
@@ -29,11 +44,13 @@ const ArtistsList = () => {
         })
     }, [])
 
+
     return (
         <div className='Artists-list'>
 
             <Container>
                 <Row xs={3} className='g-4'>
+
                     {
                         artists.map((artist) => {
                             return (

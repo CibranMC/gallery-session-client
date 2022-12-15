@@ -13,6 +13,15 @@ class AuthAPI extends InitAxios {
         }).then((response) => response.data);
     }
 
+    cartUpdate(body, token) {
+
+        return this.axios.get('/profile', body, {
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        }).then((response) => response.data)
+    }
+
     registerUser(body) {
         return this.axios.post('/register', body).then((response) => response.data);
     }
@@ -21,13 +30,6 @@ class AuthAPI extends InitAxios {
         return this.axios.post('/login', body).then((response) => response.data);
     }
 
-    cartUpdate(token) {
-        return this.axios.post('/profile', {
-            headers: {
-                'authorization': `Bearer ${token}`
-            }
-        }).then((response) => response.data)
-    }
 }
 
 export default new AuthAPI();

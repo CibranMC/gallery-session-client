@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
 
-const LOCAL_STORAGE_AUTH = 'tokenAuth';
+export const LOCAL_STORAGE_AUTH = 'tokenAuth';
 
 export const AuthProvider = (props) => {
     const [user, setUser] = useState(null);
@@ -13,7 +13,6 @@ export const AuthProvider = (props) => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [isGallerist, setGallerist] = useState(false)
 
     const storeSetToken = (token) => {
         console.log(token)
@@ -24,6 +23,13 @@ export const AuthProvider = (props) => {
         localStorage.removeItem(LOCAL_STORAGE_AUTH);
     }
 
+    // const profile = () => {
+    //     if (token) {
+    //         AuthAPI
+    //             .cartUpdate(body, token)
+    //     }
+    // }
+
     const authentication = () => {
         const token = localStorage.getItem(LOCAL_STORAGE_AUTH);
 
@@ -32,7 +38,6 @@ export const AuthProvider = (props) => {
                 .me(token)
                 .then((user) => {
                     setUser(user);
-                    console.log(user)
                 }).then(() => setIsLoggedIn(true))
                 .catch((err) => {
                     console.error(err); setIsLoggedIn(false)

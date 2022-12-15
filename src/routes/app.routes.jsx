@@ -19,7 +19,7 @@ import { AuthContext } from '../context/auth.context';
 
 const AppRoutes = () => {
     const { user } = useContext(AuthContext)
-    console.log(user)
+
     return (
         <Routes>
             <Route path='/' element={<HomePage />} />

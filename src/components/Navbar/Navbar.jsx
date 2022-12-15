@@ -7,7 +7,7 @@ import { useContext } from 'react';
 
 function NavbarComponent() {
     const { logOut, isLoggedIn, user } = useContext(AuthContext)
-    console.log(user);
+
 
     return (
         <>
@@ -30,7 +30,7 @@ function NavbarComponent() {
                                 </NavDropdown>
                             }
                             <Nav.Link ><Link className="link-navbar" to="#home">Exhibitions</Link></Nav.Link>
-                            <Nav.Link ><Link className="link-navbar" to="/footer">Contact Us</Link></Nav.Link>
+                            <Nav.Link ><Link className="link-navbar" onClick={() => { window.location.href = "#footer" }}>Contact Us</Link></Nav.Link>
 
 
 

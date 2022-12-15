@@ -41,7 +41,7 @@ const HomePage = () => {
 
                     <h4 className='title'>Laura Mesa</h4>
                     <h5 className='focus'>Artista destacada</h5>
-                    <div class="week-artist">
+                    <div className="week-artist">
                         <p className='lauraimg' ><img src="/images/lauramesabody.jpeg" alt="lauramesa" /></p>
                         <article className='article'>
 
