@@ -38,7 +38,7 @@ const FooterComponent = () => {
                     <MDBRow className='mt-3'>
                         <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4 text-white text-white'>
-                                Gallería
+                                Galería
                             </h6>
                             <p className="footer-color">
 

@@ -1,3 +1,4 @@
+import "./UserPage.css"
 import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../../context/auth.context';
 import { Col, Container, Row, Pagination } from 'react-bootstrap'
@@ -29,7 +30,7 @@ const UserPage = () => {
 
 
     return (
-        <div>
+        <div className="profile-page">
             <Container>
                 <Row xs={3} className='g-4'>
                     {
