@@ -41,6 +41,12 @@
     background: #212529 !important
 }
 
+.dropdown-item:focus,
+.dropdown-item:hover,
+.dropdown-item:active {
+    background-color: transparent !important;
+}
+
 .cathalogue {
     text-decoration: none;
     color: white;
