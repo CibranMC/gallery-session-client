@@ -33,5 +33,3 @@ class AuthAPI extends InitAxios {
 }
 
 export default new AuthAPI();
-
-//req user en el back,usar el middlewarre y pasar por headers el token

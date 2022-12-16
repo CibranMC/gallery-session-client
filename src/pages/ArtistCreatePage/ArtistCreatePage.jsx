@@ -42,7 +42,6 @@ const ArtistCreate = () => {
     return (
         <>
             <div style={{ marginTop: '60px' }}></div>
-            <h1>CREAR</h1>
             <Form onSubmit={createNewArtist}>
                 <Container>
                     <Row className="mb-3">
