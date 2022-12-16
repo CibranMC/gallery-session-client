@@ -11,6 +11,7 @@ const ArtworkCard = ({ artwork }) => {
                 <Row>
                     <Col className='col-text'>
                         <h2>{artwork.name}</h2>
+                        <hr class="solid"></hr>
                         <h5>{artwork.artistName}</h5>
                         <p>{artwork.description}</p>
                         <p>{artwork.year}</p>
