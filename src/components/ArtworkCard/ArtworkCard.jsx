@@ -16,7 +16,7 @@ const ArtworkCard = ({ artwork }) => {
                         <p>{artwork.description}</p>
                         <p>{artwork.year}</p>
                         <p>{artwork.technique}</p>
-                        <p>{artwork.price}</p>
+                        <p>{artwork.price}$</p>
                     </Col>
 
                     <Col><p className='col-img'><img className="artworkcard-img" src={artwork.imageArtworkUrl} alt={artwork.name} /></p></Col>
