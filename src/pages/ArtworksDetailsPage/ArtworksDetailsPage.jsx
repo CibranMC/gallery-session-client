@@ -13,6 +13,7 @@ const ArtworkDetail = () => {
     const { id } = useParams()
     const [artwork, setArtwork] = useState(undefined);
     const { isLoggedIn } = useContext(AuthContext);
+    const [cart, setCart] = useState([]);
 
     const handleCart = () => {
         AuthAPI.cartUpdate({ cart: artwork }, localStorage.getItem(LOCAL_STORAGE_AUTH)).then(() => {
@@ -20,6 +21,21 @@ const ArtworkDetail = () => {
             // setArtwork(artwork.cart)
         })
     }
+    // AuthAPI.cartUpdate()
+
+
+    const artworkCart = () => {
+        console.log(artwork)
+        const addToCart = (artwork) => {
+            setCart([...cart, artwork])
+        }
+
+    }
+
+
+
+
+
 
     const handleCheckout = (event) => {
         event.preventDefault()
