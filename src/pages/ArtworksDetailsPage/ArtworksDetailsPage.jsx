@@ -60,8 +60,8 @@ const ArtworkDetail = () => {
             {artwork && <ArtworkCard artwork={artwork} />}
             <form method="POST" >
                 {isLoggedIn ? (
-                    <Button variant="submit" onClick={handleCheckout}>check</Button>)
-                    : (<Button variant="submit" as={Link} to="/auth/register">check</Button>)}
+                    <Button variant="submit" onClick={handleCheckout}>Comprar</Button>)
+                    : (<Button variant="submit" as={Link} to="/auth/register">Comprar</Button>)}
             </form >
             {/* <button onClick={handleCart}>Add</button> */}
 
