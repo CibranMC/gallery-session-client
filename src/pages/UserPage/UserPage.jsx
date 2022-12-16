@@ -13,6 +13,20 @@ const UserPage = () => {
     const { id } = useParams()
     const { user } = useContext(AuthContext)
 
+    console.log(user)
+
+    // useEffect(() => {
+    //     AuthAPI.cartUpdate(id, token).then((res) => {
+    //         storeSetToken(res.token)
+    //         console.log(cart)
+    //         setCart(res.cart)
+    //         authentication()
+    //     })
+
+    // }, [])
+
+
+
     return (
         <div className="profile-page">
             <Container>
