@@ -78,7 +78,7 @@ const ArtistCreate = () => {
 
                             <Form.Control.Feedback tooltip>Looks good!</Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Label>Username</Form.Label>
+                        <Form.Label className='usernametext'>Username</Form.Label>
                         <Form.Control
                             onChange={updateNewArtist}
                             type="text"
