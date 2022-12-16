@@ -41,6 +41,10 @@
     background: #212529 !important
 }
 
+.dropdown-item:focus {
+    background-color: transparent !important;
+}
+
 .btn {
     color: blue !important;
     background-color: white !important;
